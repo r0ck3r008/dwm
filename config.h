@@ -72,6 +72,8 @@ static const char *reboot[] = { "systemctl", "reboot" };
 static const char *volup[] = { "/home/naman/git/dwm/scripts/vol.sh", "inc" };
 static const char *voldwn[] = { "/home/naman/git/dwm/scripts/vol.sh", "dec" };
 static const char *volmute[] = { "/home/naman/git/dwm/scripts/vol.sh", "mute" };
+static const char *britup[] = { "/home/naman/git/dwm/scripts/brit.sh", "inc"};
+static const char *britdwn[] = { "/home/naman/git/dwm/scripts/brit.sh", "dec"};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -81,6 +83,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Up,     spawn,          {.v = volup} },
 	{ MODKEY|ShiftMask,		XK_Down,   spawn,          {.v = voldwn} },
 	{ ALTKEY,			XK_m,	   spawn,          {.v = volmute} },
+	{ ALTKEY,			XK_b,	   spawn,          {.v = britup} },
+	{ ALTKEY|ShiftMask,		XK_b,	   spawn,          {.v = britdwn} },
 	{ MODKEY,			XK_Return, spawn,          {.v = termcmd } },
 	{ ALTKEY|ControlMask,		XK_s,      spawn,          {.v = pwroff } },
 	{ ALTKEY|ControlMask,		XK_r,      spawn,          {.v = reboot } },
