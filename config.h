@@ -45,6 +45,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define MODKEY Mod4Mask
+#define ALTKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -62,13 +63,16 @@ static const char *roficmd[] = { "rofi", "-show", "drun", "-theme" , "Arc-Dark",
 	"-show-icons", "-icon-theme", "Arc", "-lines", "5", "-padding", "800",
 	"-width", "50", "-bw", "0", "-eh", "2", "-threads", "0"};
 static const char *rofiwindow[] = { "rofi", "-show", "window", "-theme" , "Arc-Dark",
-"-show-icons", "-icon-theme", "Arc", "-lines", "5", "-padding", "800",
-"-width", "50", "-bw", "0", "-eh", "2", "-threads", "0"};
+	"-show-icons", "-icon-theme", "Arc", "-lines", "5", "-padding", "800",
+	"-width", "50", "-bw", "0", "-eh", "2", "-threads", "0"};
+static const char *lockcmd[] = { "i3lock", "-i", "~/git/dwm/lock.png",
+	"-c", "ffffff" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = rofiwindow} },
+	{ ALTKEY,                       XK_l,      spawn,	   {.v = lockcmd} },
 	{ MODKEY,			XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
