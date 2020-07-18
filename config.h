@@ -69,12 +69,18 @@ static const char *lockcmd[] = { "i3lock", "-i", "/home/naman/git/dwm/lock.png",
 	"-c", "ffffff" };
 static const char *pwroff[] = { "systemctl", "poweroff" };
 static const char *reboot[] = { "systemctl", "reboot" };
+static const char *volup[] = { "/home/naman/git/dwm/scripts/vol.sh", "inc" };
+static const char *voldwn[] = { "/home/naman/git/dwm/scripts/vol.sh", "dec" };
+static const char *volmute[] = { "/home/naman/git/dwm/scripts/vol.sh", "mute" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = rofiwindow} },
 	{ ALTKEY,                       XK_l,      spawn,	   {.v = lockcmd} },
+	{ MODKEY|ShiftMask,		XK_Up,     spawn,          {.v = volup} },
+	{ MODKEY|ShiftMask,		XK_Down,   spawn,          {.v = voldwn} },
+	{ ALTKEY,			XK_m,	   spawn,          {.v = volmute} },
 	{ MODKEY,			XK_Return, spawn,          {.v = termcmd } },
 	{ ALTKEY|ControlMask,		XK_s,      spawn,          {.v = pwroff } },
 	{ ALTKEY|ControlMask,		XK_r,      spawn,          {.v = reboot } },
