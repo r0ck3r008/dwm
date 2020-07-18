@@ -65,7 +65,7 @@ static const char *roficmd[] = { "rofi", "-show", "drun", "-theme" , "Arc-Dark",
 static const char *rofiwindow[] = { "rofi", "-show", "window", "-theme" , "Arc-Dark",
 	"-show-icons", "-icon-theme", "Arc", "-lines", "5", "-padding", "800",
 	"-width", "50", "-bw", "0", "-eh", "2", "-threads", "0"};
-static const char *lockcmd[] = { "i3lock", "-i", "~/git/dwm/lock.png",
+static const char *lockcmd[] = { "i3lock", "-i", "/home/naman/git/dwm/lock.png",
 	"-c", "ffffff" };
 
 static Key keys[] = {
