@@ -24,6 +24,7 @@ config.h:
 
 dwm: ${OBJ}
 	${CC} -o $@ ${OBJ} ${LDFLAGS}
+	make clean
 
 clean:
 	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
