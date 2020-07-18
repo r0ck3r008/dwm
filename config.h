@@ -67,6 +67,8 @@ static const char *rofiwindow[] = { "rofi", "-show", "window", "-theme" , "Arc-D
 	"-width", "50", "-bw", "0", "-eh", "2", "-threads", "0"};
 static const char *lockcmd[] = { "i3lock", "-i", "/home/naman/git/dwm/lock.png",
 	"-c", "ffffff" };
+static const char *pwroff[] = { "systemctl", "poweroff" };
+static const char *reboot[] = { "systemctl", "reboot" };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -74,6 +76,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_w,      spawn,          {.v = rofiwindow} },
 	{ ALTKEY,                       XK_l,      spawn,	   {.v = lockcmd} },
 	{ MODKEY,			XK_Return, spawn,          {.v = termcmd } },
+	{ ALTKEY|ControlMask,		XK_s,      spawn,          {.v = pwroff } },
+	{ ALTKEY|ControlMask,		XK_r,      spawn,          {.v = reboot } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
