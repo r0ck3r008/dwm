@@ -28,6 +28,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <errno.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
@@ -1729,9 +1730,11 @@ spawn(const Arg *arg)
 		if (dpy)
 			close(ConnectionNumber(dpy));
 		setsid();
-		execvp(((char **)arg->v)[0], (char **)arg->v);
-		fprintf(stderr, "dwm: execvp %s", ((char **)arg->v)[0]);
-		perror(" failed");
+		if(execvp(((char **)arg->v)[0], (char **)arg->v)<0) {
+			fprintf(stderr, "dwm: execvp %s: %s",
+				((char **)arg->v)[0], strerror(errno));
+			perror(" failed");
+		}
 		exit(EXIT_SUCCESS);
 	}
 }
