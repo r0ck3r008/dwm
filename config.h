@@ -69,11 +69,11 @@ static const char *lockcmd[] = { "i3lock", "-i", "/home/naman/git/dwm/lock.png",
 	"-c", "ffffff" };
 static const char *pwroff[] = { "systemctl", "poweroff" };
 static const char *reboot[] = { "systemctl", "reboot" };
-static const char *volup[] = { "/home/naman/git/dwm/scripts/vol.sh", "inc" };
-static const char *voldwn[] = { "/home/naman/git/dwm/scripts/vol.sh", "dec" };
-static const char *volmute[] = { "/home/naman/git/dwm/scripts/vol.sh", "mute" };
-static const char *britup[] = { "/home/naman/git/dwm/scripts/brit.sh", "inc"};
-static const char *britdwn[] = { "/home/naman/git/dwm/scripts/brit.sh", "dec"};
+static const char *volup[] = { "/home/naman/.config/dwm/scripts/vol.sh", "inc" };
+static const char *voldwn[] = { "/home/naman/.config/dwm/scripts/vol.sh", "dec" };
+static const char *volmute[] = { "/home/naman/.config/dwm/scripts/vol.sh", "mute" };
+static const char *britup[] = { "/home/naman/.config/dwm/scripts/brit.sh", "inc"};
+static const char *britdwn[] = { "/home/naman/.config/dwm/scripts/brit.sh", "dec"};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
